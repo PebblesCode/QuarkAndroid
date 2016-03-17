@@ -9,6 +9,295 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main" tools:context=".MainActivity">
 
-    <TextView android:text="Hello World!" android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <android.support.v7.widget.CardView
+        android:id="@+id/cardLocation"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        app:cardElevation="8dp"
+        android:layout_marginBottom="25dp"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="15dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/profile_image"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:src="@drawable/default_user"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginRight="15dp"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Richard Branson"
+                android:textSize="7pt"
+                android:layout_marginTop="16dp"
+                android:id="@+id/textViewName"
+                android:textColor="@color/colorPrimary"
+                android:layout_toRightOf="@+id/profile_image"
+                android:layout_toEndOf="@+id/profile_image" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rating : "
+                android:textSize="6pt"
+                android:layout_marginTop="4dp"
+                android:textColor="@android:color/black"
+                android:id="@+id/textViewRatingLabel"
+                android:layout_below="@+id/textViewName"
+                android:layout_toRightOf="@+id/profile_image"
+                android:layout_toEndOf="@+id/profile_image" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Maverick"
+                android:textSize="6pt"
+                android:textColor="@color/colorBlue"
+                android:layout_marginTop="4dp"
+                android:id="@+id/textViewRating"
+                android:layout_above="@+id/textViewAvgScoreLabel"
+                android:layout_toRightOf="@+id/textViewRatingLabel"
+                android:layout_toEndOf="@+id/textViewRatingLabel" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Avg. Score : "
+                android:textSize="6pt"
+                android:layout_marginTop="4dp"
+                android:textColor="@android:color/black"
+                android:id="@+id/textViewAvgScoreLabel"
+                android:layout_below="@+id/textViewRatingLabel"
+                android:layout_toRightOf="@+id/profile_image"
+                android:layout_toEndOf="@+id/profile_image" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="76%"
+                android:textSize="6pt"
+                android:textColor="@color/colorGreen"
+                android:layout_marginTop="4dp"
+                android:id="@+id/textViewAvgScore"
+                android:layout_above="@+id/textViewWorksheetsLabel"
+                android:layout_toRightOf="@+id/textViewAvgScoreLabel"
+                android:layout_toEndOf="@+id/textViewAvgScoreLabel" />
+
+            <ImageView
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:scaleType="center"
+                android:src="@drawable/caret_up"
+                android:layout_alignTop="@+id/textViewAvgScore"
+                android:layout_toRightOf="@+id/textViewRating"
+                android:layout_toEndOf="@+id/textViewRating"
+                android:layout_alignBottom="@+id/textViewAvgScore" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Worksheets Done : "
+                android:textSize="6pt"
+                android:layout_marginTop="4dp"
+                android:textColor="@android:color/black"
+                android:id="@+id/textViewWorksheetsLabel"
+                android:layout_below="@+id/textViewAvgScoreLabel"
+                android:layout_toRightOf="@+id/profile_image"
+                android:layout_toEndOf="@+id/profile_image" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="456"
+                android:textSize="6pt"
+                android:textColor="@color/colorAccent"
+                android:id="@+id/textViewWorksheetsDone"
+                android:layout_alignTop="@+id/textViewWorksheetsLabel"
+                android:layout_toRightOf="@+id/textViewName"
+                android:layout_toEndOf="@+id/textViewName" />
+
+        </RelativeLayout>
+
+    </android.support.v7.widget.CardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/cardLocation"
+        android:layout_alignParentBottom="true"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="horizontal"
+            android:layout_below="@+id/cardLocation"
+            android:layout_weight="1"
+            android:gravity="center_vertical">
+            <RelativeLayout
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:id="@+id/layoutAssignments"
+                >
+                <ImageView
+                    android:src="@drawable/tasks"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/imageViewAssignments"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Assignments"
+                    android:layout_below="@+id/imageViewAssignments"
+                    android:gravity="center"
+                    android:textColor="@color/colorAccent"
+                    android:layout_marginTop="10dp"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                >
+                <ImageView
+                    android:src="@drawable/line_chart"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/imageViewProgress"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Progress"
+                    android:layout_below="@+id/imageViewProgress"
+                    android:gravity="center"
+                    android:textColor="@color/colorAccent"
+                    android:layout_marginTop="10dp"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                >
+                <ImageView
+                    android:src="@drawable/readings"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/imageViewReadings"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Readings"
+                    android:layout_below="@+id/imageViewReadings"
+                    android:gravity="center"
+                    android:textColor="@color/colorAccent"
+                    android:layout_marginTop="10dp"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:layout_below="@+id/cardLocation"
+            android:gravity="center_vertical">
+            <RelativeLayout
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                >
+                <ImageView
+                    android:src="@drawable/question"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/imageViewHelp"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Help"
+                    android:layout_below="@+id/imageViewHelp"
+                    android:gravity="center"
+                    android:textColor="@color/colorAccent"
+                    android:layout_marginTop="10dp"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                >
+                <ImageView
+                    android:src="@drawable/info"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/imageViewAbout"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="About"
+                    android:layout_below="@+id/imageViewAbout"
+                    android:gravity="center"
+                    android:textColor="@color/colorAccent"
+                    android:layout_marginTop="10dp"
+                    />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                >
+                <ImageView
+                    android:src="@drawable/cog"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:id="@+id/imageViewSettings"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Settings"
+                    android:layout_below="@+id/imageViewSettings"
+                    android:gravity="center"
+                    android:textColor="@color/colorAccent"
+                    android:layout_marginTop="10dp"
+                    />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
 </RelativeLayout>
