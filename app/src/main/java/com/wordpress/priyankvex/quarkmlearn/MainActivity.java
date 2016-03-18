@@ -1,21 +1,17 @@
 package com.wordpress.priyankvex.quarkmlearn;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.balysv.materialripple.MaterialRippleLayout;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-public class MainActivity extends AppCompatActivity {
+    View mLayoutAssignments, mLayoutProgress, mLayoutReadings, mLayoutHelp, mLayoutAbout, mLayoutSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,19 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        ViewGroup layoutAssignments = (ViewGroup) findViewById(R.id.layoutAssignments);
-        MaterialRippleLayout.on(layoutAssignments)
-                .rippleColor(R.color.colorAccent)
-                .rippleHover(true)
-                .rippleAlpha(0.1f)
-                .rippleOverlay(true)
-                .create();
-        layoutAssignments.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Toast.makeText(getApplicationContext(), "Assignments", Toast.LENGTH_SHORT).show();
-            }
-        });
+        getViews();
     }
 
     @Override
@@ -58,5 +42,45 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private void getViews(){
+        mLayoutAssignments = findViewById(R.id.layoutAssignments);
+        mLayoutProgress = findViewById(R.id.layoutProgress);
+        mLayoutReadings = findViewById(R.id.layoutReadings);
+        mLayoutHelp = findViewById(R.id.layoutHelp);
+        mLayoutAbout = findViewById(R.id.layoutAbout);
+        mLayoutSettings = findViewById(R.id.layoutSettings);
+        mLayoutAssignments.setOnClickListener(this);
+        mLayoutProgress.setOnClickListener(this);
+        mLayoutReadings.setOnClickListener(this);
+        mLayoutHelp.setOnClickListener(this);
+        mLayoutAbout.setOnClickListener(this);
+        mLayoutSettings.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View v) {
+        int id = v.getId();
+        switch (id){
+            case R.id.layoutAssignments:
+                // Open Assignments activity
+                break;
+            case R.id.layoutProgress:
+                // Open Progress activity
+                break;
+            case R.id.layoutReadings:
+                // Open Readings activity
+                break;
+            case R.id.layoutHelp:
+                // Open Help activity
+                break;
+            case R.id.layoutAbout:
+                // Open About activity
+                break;
+            case R.id.layoutSettings:
+                // Open Settings activity
+                break;
+        }
     }
 }
